@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "volkhov-bold";
+    src: url("/fonts/volkhov-bold.woff2") format("woff2"),
+           url("/fonts/font.css/volkhov-bold.woff") format("woff");
+        }
+@font-face { 
+    font-family: "poppins-regular";
+    src: url("/fonts/poppins-regular.woff2") format("woff2"),
+           url("fonts/font.css/poppins-regular.woff2") format("woff");
+        }
+
+@font-face { 
+    font-family: "poppins-bold";
+    src: url("/fonts/poppins-bold.woff2") format("woff2"),
+            url("fonts/font.css/poppins-bold.woff2") format("woff");
+        }
+
+@font-face { 
+    font-family: "OpenSans-Regular";
+    src: url("/fonts/OpenSans-Regular.woff2") format("woff2"),
+            url("fonts/font.css/OpenSans-Regular.woff2") format("woff");
+        }
+
+
+
+
+
+    

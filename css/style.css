@@ -1,0 +1,742 @@
+
+/*La propriété content est utilisée avec les pseudo-éléments ::before et ::after afin de générer le contenu 
+  d'un élément.*/
+/*reset des marges intérieures et extérieures des différents éléments de notre page 
+pour nous assurer d’avoir un affichage cohérent d’un navigateur à l’autre.*/
+html, body * {
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box; /* indique au navigateur de prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur.
+   Autrement dit, si on définit un élément avec une largeur de 100 pixels, ces 100 pixels inclueront la bordure et le remplissage éventuellement ajoutés 
+   et c'est le contenu de la boîte qui sera compressé pour absorber cette largeur supplémentaire. Cela permet généralement de simplifier le dimensionnement des éléments.*/
+  }
+
+/*EN TETE*/
+header {
+  display: flex; /*conteneur flexible*/
+  position: sticky; /*reste figé en haut en déroulant*/
+  width: 100%;
+  height: 80px; /*hauteur*/
+  background-color: rgb(255, 255, 255);
+  z-index: 3; /*niveau ordre par dessus*/
+  top: 0; /*top :0px si on souhaite que le menu reste figé en haut de la page.*/
+  padding: 20px 20px; /*écart interne dans le header*/
+}
+header .logo {
+  margin-left: 10%; /*% écartement marge du bord gauche*/
+  margin-right: auto;
+}
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%; /*hauteur des logos*/
+  white-space: nowrap; /*Les blancs sont regroupés comme avec normal mais les retours à la ligne automatiques sont supprimés.*/
+}
+
+.logo img {
+  max-height: 100%;
+}
+
+.logo img:nth-child(1) {
+  margin-right: 20px; /*marge droite du 1er enfant soit entre logo1 et logo2*/
+}
+
+/*animation 1er logo header à gauche 1er enfant au survol*/
+/* accès 1er enfant*/
+.logo:hover img:nth-child(1) {
+  animation-name: animation_logo;
+  animation-duration: 0.5s; /*durée de l'animation*/
+  transition-timing-function: ease-in; /*animation logo header début lent*/
+}
+
+@keyframes animation_logo {
+  from {
+    transform: rotate(0deg); /*départ de l'animation à partir*/
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+
+  40% {
+    transform: rotate(-15deg);
+  }
+
+  60% {
+    transform: rotate(15deg);
+  }
+
+  80% {
+    transform: rotate(-15deg);
+  }
+
+  to {
+    transform: rotate(0deg); /*retour initial*/
+  }
+}
+/*BARRE NAVIGATION*/
+
+header nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-right: 400px ; /*écart du menu de 850px à partir de la gauche*/
+}
+header nav ul {
+  display: flex;
+  align-items: center; /*aligne les éléments au centre*/
+  height: 100%; /*hauteur*/
+  margin: auto; /*à 0*/
+  list-style-type: none; /*enlève les puces de la liste*/
+}
+
+header nav ul li {
+  margin-right: 40px;
+  flex:1 1 1; /*nos différents éléments de menu vont tous avoir la même taille de base avec flex-basis : 0 et vont pouvoir grandir 
+  ou rétrécir pour absorber l’espace vide du menu ou pour faire de la place à de nouveaux éléments.*/
+   /*écart entre les menus*/
+}
+
+header nav ul li a {
+  color: inherit;/*par défaut*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; /*taille police*/
+  text-decoration: none; /*pas de surlignage sous les liens du menu*/
+}
+
+nav a:hover {
+  text-decoration: underline; /*fait apparaitre une bordure inférieure lors du survol*/
+}
+header .menu_burger{
+  display: none;
+ /*visibility: hidden; 
+ Il existe cependant une différence de taille entre ces deux méthodes :
+ appliquer un visibility: hidden sur un élément comme un div par exemple va simplement cacher cet
+ élément mais ne va pas le retirer du flux de la page ce qui signifie que l’espace qu’il occupait lorsqu’il
+ était visible va être conservé tandis qu’appliquer un display: none va non seulement masquer l’élément 
+ en question mais va en plus permettre aux autres éléments d’occuper l’espace de l’élément caché.*/
+}
+
+/*TITRES*/
+
+h1 {
+  font-family: "volkhov-bold";/*relié au fichier font.css*/
+  color: white;
+  font-size: 100px;
+}
+
+h2 {
+  font-family: "volkhov-bold";
+  color: rgb(2, 2, 53);
+  font-size: 70px;
+}
+
+h3 {
+  font-family: "poppins-bold";
+  color: rgb(245, 158, 148);
+  font-size: 20px;
+}
+
+h4 {
+  font-family: "poppins-bold";
+  color: #5E6282;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  color: rgba(255, 255, 255, 0.6); /*transparence*/
+  font-size: 20px;
+}
+
+/*COULEURS TEXTE*/
+button {
+  color: #fff;
+}
+
+figcaption {
+  color: #5e6282;
+}
+
+.t_noir {
+  color: #000;
+}
+
+.t_rose {
+  color: rgb(245, 158, 148);
+}
+
+.t_gris1 {
+  color: rgba(226, 224, 224, 0.7);
+}
+
+.t_gris2 {
+  color: rgba(128, 128, 128, 0.9);
+}
+
+.t_gris3 {
+  color: #3e3f43;
+}
+
+.t_bleu {
+  color: rgb(78, 78, 126);
+}
+
+.t_gris_bleu {
+  color: rgba(161, 161, 196, 0.9);
+}
+
+.t.fonce {
+  color: rgb(31, 24, 24);
+}
+
+/*BOUTONS*/
+
+.bouton {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px Arial, Helvetica, sans-serif;
+  padding: 20px 30px;
+  border: none;
+  border-radius:7px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.bouton.orange {
+  background-color: rgba(240, 169, 16,1);
+  box-shadow: 0px 10px 20px 10px rgba(241, 165, 1, 0.1); /*ombre et transparence*/
+  font-size: 25px;
+  border-radius: 15px;
+}
+
+.bouton:hover {
+  /*au survol du bouton*/
+  transform: scale(1.03); /*modifie échelle du bouton*/
+  opacity: 0.9; /*avec opacité*/
+}
+
+/* conteneur OBJETS*/
+
+._objets {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+section {
+  position: relative;
+  padding: 100px 5% 100px 5%;
+  overflow: hidden; /*La propriété overflow-x permet de définir les mécanismes à utiliser (rognage, ascenseurs, dépassement, etc.)
+  lorsque le contenu dépasse des bords droit et gauche de la boîte de contenu.*/
+}
+section article {
+  max-width: 650px;/*taille maxi*/
+}
+/*session en arrière plan*/
+section::after { 
+  content: ""; /*La propriété content est utilisée avec les pseudo-éléments ::before et ::after afin de générer le contenu 
+  d'un élément ici vide on peut très bien suivant l'élément choisi exemple lui rajouter un point à la fin, un tiret, créer une ligne sous un titre .
+   idem pour ::before.
+   on peut aussi rajouter des guillemets pour des blockotes....*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;/*en dessous*/
+}
+
+/*SECT1*/
+
+#sect1 {
+  background-image: url("../img/illustration_principale.jpg");
+  background-size: cover; /*L'image est redimensionnée pour être aussi grande que possible et pour conserver ses proportions.
+   L'image couvre toute la largeur ou la hauteur du conteneur et les parties qui dépassent sont rognées si les proportions du conteneur
+   sont différentes (il n'y aucun espace libre sur lequel on verrait la couleur d'arrière-plan).*/
+}
+
+#sect1 .souligne_rose {
+  background: url("../img/souligne_rose.svg") no-repeat;
+}
+#sect1 .souligne_rose {
+  margin: 50px 0 20px;
+  background-position: 15px 95%; /*15px à partir de la gauche et 95% souligné rose*/
+}
+#sect1 .bouton.orange{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*SECT2*/
+
+.images {
+  position: relative;
+  vertical-align: top; /*en haut*/
+  width: 100%;
+  height: 100%; /*largeur*/
+  border-radius: 25px; /*arrondi angle de la bordure*/
+  margin: 15px;
+  padding: 0 20px 0 20px; /*écart interne entre les images gauche et droite*/
+}
+.images figure {
+  position: absolute;
+  z-index: 2; /*ordre affichage fond blanc*/
+  margin: 0;
+  border-radius: 25px; /*bordure arrondie*/
+}
+
+.images img {
+  max-width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.images figcaption {
+  text-align: center;
+  line-height: 25px; /*hauteur de ligne*/
+  font-size: 18px;
+  padding: 20px 10px 20px 10px; /*écart entre le texte du dessous et chaque image*/
+}
+.images figcaption p {
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+/*paragraphe 1er enfant pour grossir premier titre enfant */
+.images figcaption p:nth-child(1) {
+font-family: "OpenSans-Regular";
+font-weight: 700;
+font-size: 25px;
+}
+
+#sect2 #_plats{
+  display: flex;
+}
+#_plats .images {
+  width: 320px; /*largeur conteneur plats*/
+  height: 300px;/*hauteur conteneur plats*/
+}
+
+#_plats .images::after{
+content: "";
+position: absolute;
+width: 95%;
+height: 100%;
+top:0;
+left : 20px;
+z-index: 1;
+opacity: 1;
+background-color: white;
+border-radius: 25px;
+box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
+}
+
+#sect2 {
+  background: url("../img/decor_1.svg") no-repeat; /*image étoile*/
+  display: block; /*de type block*/
+  background-position: 95% 2%; /* marge à droite se positionne à 95% sur la droite et 4% vers le bas du haut de la sect2*/
+}
+
+#sect2{
+  text-align: center;
+}
+#sect2 ._titres {
+  display: block;
+  /*text-align: center;*/
+}
+
+#sect2 ._objets {
+  justify-content: center;
+  /*text-align: center;*/
+}
+
+#sect2 .images {
+  margin-bottom: 150px; /*marge du bas écarts entre les images nouveaux plats et makis*/
+}
+
+#sect2 .filet {
+  position: absolute;
+  width: 75%;
+  height: 60%;
+  right: -120px;
+  top: 120px;
+  bottom: 0;
+  z-index: 2;
+}
+
+/*MAKIS*/
+
+#_makis .images {
+  width: 270px; /*largeur conteneur makis*/
+  height: 300px;/*hauteur conteneur makis*/
+}
+#_makis {
+  box-shadow: none;
+  background-color: transparent;
+}
+#_makis .images::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: #fff;
+  border-radius: 30px;
+  transition: opacity 0.2s;
+  transition-delay: 0.1s;
+  box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+#_makis .images:hover::after {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+/*rotation animation*/
+.rot {
+  position: absolute;
+  width: 85px; /*largeur*/
+  height: 100px;
+  margin-left: -160px; /*alignement sur la gauche */
+  bottom: -40px; /*alignement sur le bas pour voir la rotation*/
+  opacity: 0; /*L'élément est complètement transparent (invisible).*/
+  transform: rotate(-90deg);
+  transition: 0.3s;
+}
+.images:hover .rot {
+  opacity: 1; /*L'élément est complètement visible opaque.*/
+  transform: rotate(0deg);
+  transition: 0.3s;
+}
+
+/*SECT3*/
+/*permet de mettre les 2 photos à la fois sur la section 3 et section 4*/
+.translation_sect3_4 {
+  position: absolute;
+  left: 0px;
+  bottom: -350px;
+  z-index: 1;
+  flex-wrap: nowrap;
+}
+.translation_sect3_4 img {
+  margin: -4px; /*pour supprimer l'écart entre les 2 photos*/
+}
+
+#sect3 {
+  padding-bottom: 800px;
+  overflow: visible; /*La propriété CSS overflow est une propriété raccourcie qui définit comment gérer le
+   dépassement du contenu d'un élément dans son bloc. Elle définit les valeurs des propriétés overflow-x et overflow-y. ici sera visible donc dépassement des photos*/
+}
+
+#sect3 article {
+  max-width: 700px;
+}
+
+#sect3::after {
+  background: url("../img/illustration_chef.jpg") no-repeat;
+  background-size: cover;
+}
+
+#sect3 .souligne_rose {
+  /*dans le titre sous le mot voyage*/
+  background-position: 0px 20%; /*descend sous le mot voyage*/
+  margin: 100px 0 40px 0; /*écart entre le lecteur vidéo et le titre et le paragraphe */
+}
+
+/*lecteur vidéo*/
+.conteneur_video {
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 180px;
+  border-radius: 15px;
+}
+.conteneur_video img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+/*bouton lecteur vidéo*/
+.bouton_lect_video {
+  display: flex;
+  position: absolute;
+  top: 50%; /*au centre du conteneur_video*/
+  left: 50%; /*au centre du conteneur_video*/
+  width: 80px;
+  height: 80px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%; /*pour faire un cercle*/
+  cursor: pointer;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*La fonction translate() permet de déplacer un élément sur le plan représenté par le document.
+  Cette transformation est définie à l'aide d'un vecteur dont les coordonnées définissent la quantité de déplacement sur chaque axe
+ (horizontal et vertical)déplace le bouton du lecteur vidéo*/
+}
+
+.bouton_lect_video img {
+  margin: auto;
+}
+
+/*surlignage bouton lecteur vidéo*/
+.bouton_lect_video:hover img {
+  opacity: 0.9;
+}
+
+/*SECTION 4*/
+#sect4 {
+  padding-top: 400px;
+}
+#sect4 article {
+  max-width: 600px;
+}
+#sect4 {
+  background: url("../img/illustration_commander.jpg") no-repeat;
+  background-size: cover;
+}
+.moyens_cmd, .façon_cmd {
+  display: block;
+}
+.moyens_cmd {
+  margin-bottom: 50px;
+}
+.moyens_cmd .façon_cmd {
+  margin-bottom: 40px;
+}
+
+.moyens_cmd a {
+  text-decoration: none;
+}
+
+.moyens_cmd figure {
+  margin: 0;
+}
+
+.moyens_cmd .façon_cmd {
+  white-space: nowrap;
+}
+
+.moyens_cmd .façon_cmd img,
+.moyens_cmd .façon_cmd figcaption {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.moyens_cmd .façon_cmd figcaption {
+  margin: 0 0 0 25px; /*texte retrait gauche pour les 3 images Ubereats Jadoo Livraison*/
+  padding: 0 60px 0 0;
+}
+
+.moyens_cmd .façon_cmd figcaption p {
+  margin: 0; /*écart entre les 3 logos et titre commandez sur le site de jadoo*/
+  white-space: normal;
+}
+
+.moyens_cmd .façon_cmd figcaption p:not(:last-child) {
+  margin-bottom: 5px; /*écart entre les lignes */
+}
+
+.moyens_cmd .façon_cmd img {
+  width: 70px; /*hauteur img*/
+  height: 70px; /*largeur img*/
+}
+/*FORMULAIRE sect5*/
+
+._formulaire {
+  display: table;
+  width: 100%;
+  box-shadow: 0px 4px 61px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+  max-width: 1300px;/*largeur maximale*/
+  margin: auto;
+}
+/*titre*/
+._formulaire h5 {
+  font-size: 20px;
+  line-height: 5px;
+  padding: 20px 0 40px;
+}
+
+.form_gauche_donnees, .form_droite_image{
+  display: table-cell;
+  vertical-align: top;
+  width: 50%;
+  height: 100%;
+  text-align: left;
+}
+
+.form_gauche_donnees {
+  padding: 50px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.form_gauche_donnees {
+  text-align: left;
+}
+.formulaire_nom_prenom .formulaire_contact {
+  display: inline-block;
+  width: 40%;
+}
+
+.formulaire_contact {
+  margin: 0 0 20px;
+}
+.formulaire_contact label {
+  margin: 0 0 10px;
+}
+.formulaire_contact label,.formulaire_contact input {
+  display: block;
+  font-size: 20px;
+}
+.formulaire_contact:hover input {
+  transform: scale(1.02);
+}
+.formulaire_contact input {
+  margin: 0;/*Pour se débarrasser de cet espace, on « surcharge » le style par défaut avec une marge nulle grâce à margin: 0;.*/
+  padding: 0 0 20px; /*écartement entre les rubriques*/
+  color: #e91f1f;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+/*La pseudo-classe :focus permet de cibler un élément lorsque celui-ci reçoit le focus
+   (soit il est sélectionné à l'aide du clavier, soit il est activé avec la souris comme par exemple le champ d'un formulaire).*/
+.formulaire_contact input:focus {
+  margin: 0 0 -10px;
+  padding: 0 0 10px; /*aggrandit la petite fenêtre lorsque l'on clique sur l'élément du formulaire*/
+  border-bottom: 1px solid #1519f3; /*surligne en bas en bleu quand on clique dans la case*/
+  transform: scale(1.02);
+}
+/* décalage bouton dans le formulaire*/
+.bouton.bouton_envoyer {
+  margin: 40px 0px 20px 50px; 
+  border-radius: 5px;
+  background-color: #5c96d4;
+  box-shadow: 0px 5px 80px 10px rgb(214, 214, 219); /*ombre et transparence*/
+}
+/*écart entre la côche et le span mot "envoyer" bouton bleu dans le formulaire*/
+.bouton.bouton_envoyer img {
+  margin: 0 30px 0 0;
+}
+#sect5 {
+  text-align: center;
+  background-color: white;
+}
+
+#sect5 h5 {
+  line-height: 25px;/*interligne titre h5*/
+}
+.form_droite_image {
+  background-image: url("../img/illustration_formulaire.jpg");
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/*footer*/
+
+footer section {
+  padding: 0;
+}
+
+footer {
+  background-color: #f3f3f3da;
+  padding: 80px 8% 20px;
+}
+footer > p {
+  font-size: 18px;
+  line-height: 100%;
+}
+footer .copyright {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+footer .categorie_footer {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 25px 0 25px;
+}
+
+footer p,
+.gris_bleu {
+  font-size: 21px;
+  line-height: 200%;
+}
+
+/*bouton google play et apple*/
+.telecharger * {
+  /*tout les boutons*/
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.telecharger {
+  background-color: black;
+  padding: 15px 15px;
+  color: white;
+  border: 2px solid none;
+  border-radius: 40px;
+  font-size: 12px;
+}
+
+#footer_telechargements .logo_UberEats {
+  height: 70px;
+}
+
+#logo_jadoo_footer .logo {
+  display: block;
+  height: auto;
+}
+
+#logo_jadoo_footer .logo img {
+  height: 70px;
+}
+#footer_telechargements .logo_UberEats{
+  height: 70px;
+}
+#guide_footer div {
+  display: inline-block; /*on met les 2 divs côte à côte*/
+  vertical-align: top; /*aligne en haut*/
+}
+#guide_footer .guide_titre {
+  font-size: 30px;
+}
+footer p a{
+  text-decoration: none;
+}
+footer p a:hover{
+  text-decoration: underline;
+}
+#guide_footer p {
+  margin: 0;
+}
+#guide_footer .guide_titre:not(:last-child) {
+  margin: 0 0 20px; /*écartement vertical titre et paragraphes situés en dessous*/
+}
+#guide_footer p:not(:last-child) {
+  margin: 0 0 10px;/*écartement vertical entre les paragraphes*/
+}
+#guide_footer div:not(:last-child) {/*écart horizontal entre les titres*/
+  margin: 0 100px 0 0;
+}
+#footer_telechargements p {
+  margin: 25px 0 30px;/*écartement bouton uberEats et le paragraphe télécharger UberEats*/
+}
+
+
+
+
+  
+
+ 
+  

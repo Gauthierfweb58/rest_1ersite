@@ -1,0 +1,21 @@
+/*TABLETTES*/
+@media screen and (max-width: 1024px){
+    
+  header .menu_burger{
+    display: inline-block;
+    vertical-align: middle;
+  } 
+  header nav ul li{
+    display: none;
+    }
+    header nav{
+      margin-right:10%;
+    }
+header .logo {
+  margin-left: 5%; /*% écartement marge du bord gauche*/
+  margin-right: auto;
+}
+#sect1 .souligne_rose {
+  background-position: 0px 95%;
+}
+}

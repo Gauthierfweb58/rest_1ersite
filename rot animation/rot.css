@@ -1,0 +1,24 @@
+
+.rot {
+    background: url("../img/decoration_rose.svg") no-repeat;
+  }
+
+.rot {
+    /*1er enfant*/
+    animation-name: anim_rot1;
+    animation-duration: 1s; /*durée de l'animation*/
+    transition-timing-function: ease-in; /*animation logo header début lent*/
+  }
+  
+  @keyframes anim_rot1 {
+    from {
+      transform: rotate(0deg); /*départ de l'animation à partir*/
+    }
+    100%{
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg); /*retour initial*/
+    }
+  }
+  

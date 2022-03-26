@@ -1,0 +1,166 @@
+/*PORTABLES*/
+@media screen and (max-width:780px){
+    section article{
+    width: 100%;
+    text-align: center;
+    }
+    
+    h1 {
+      font-size: 45px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 25px;
+    }
+    h5 {
+      font-size: 30px;
+    }
+    /*PLATS*/
+
+    /*#sect2{
+      background: white;/*enlève l'image de fond en forme d'étoile
+    }
+    #sect3::after{
+        background: white;
+    }
+    #sect4{
+      background: white;
+    }
+    #sect4 ._objets{
+      justify-content: center;
+    }*/
+
+    #_plats{
+      height: 600px;
+    }
+    
+    /*MAKIS*/
+    
+    
+    #_makis{
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding:0;
+    }
+    #_makis .images figure, #_makis .images figure figcaption{
+      display:flex;
+      align-items: center;
+    }
+    #_makis .images figure figcaption{
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    }
+    #_makis .images figure figcaption,
+    #_makis .images figure figcaption p{
+      text-align: left;
+    }
+    
+    #_makis .images:not(:last-child){
+     margin-bottom: 15px;
+    }
+   
+    #_plats .images{
+      position: absolute;
+      opacity: 0;
+      margin: 0;
+    }
+    #_plats .filet{
+      display:none;
+    }
+     /*CAROUSSEL*/
+    #_plats .images:nth-child(1){
+      animation : defilement_1 20s  infinite 3s;
+    }
+    #_plats .images:nth-child(2){
+      animation : defilement_2 20s  infinite 3s;
+    }
+    #_plats .images:nth-child(3){
+      animation : defilement_3 20s  infinite 3s;
+    }
+    @keyframes defilement_1{
+      0%{
+        opacity:0;/*INVISIBLE*/
+        transform:translateX(50%);
+      }
+      3%{
+        opacity:1;/*VISIBLE*/
+        transform:translateX(0);/*SE DEPLACE*/
+      }
+      30%{
+        opacity:1;
+        transform:translateX(0);
+      }
+      36%{
+        opacity:0;
+        transform:translateX(-50%);
+      }
+      100%{
+        opacity:0;
+        transform:translateX(-50%);
+      }
+    }
+     
+    @keyframes defilement_2{
+      0%{
+        opacity:0;
+        transform:translateX(50%);
+      }
+      36%{
+        opacity:0;
+        transform:translateX(50%);
+      }
+      39%{
+        opacity:1;
+        transform:translateX(0);
+      }
+      69%{
+        opacity:1;
+        transform:translateX(0);
+      }
+    
+      72%{
+        opacity:0;
+        transform: translate(-50%); /*SE DEPLACE*/
+      }
+      100%{
+        opacity:0;
+        transform:translateX(-50%);
+      }
+    }
+    
+    @keyframes defilement_3{
+      0%{
+        opacity:0;
+        transform:translateX(50%);
+      }
+      72%{
+        opacity:0;
+        transform:translateX(50%);
+      }
+      75%{
+        opacity:1;
+        transform:translateX(0);
+      }
+      97%{
+        opacity:1;
+        transform:translateX(0);
+      }
+      100%{
+        opacity:0;
+        transform:translateX(-50%);
+      }
+    }
+    .form_droite_image{
+        display: none;
+    }
+    ._formulaire{
+        box-shadow: none;
+    }
+  }

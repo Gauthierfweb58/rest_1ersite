@@ -1,0 +1,12 @@
+/*ECRAN*/
+@media screen and (max-width: 1320px){
+    .body {
+      display: block;
+    }
+    .main {
+      width:100%;
+    }
+    .main .article{
+      overflow: hidden;
+    }
+  }
