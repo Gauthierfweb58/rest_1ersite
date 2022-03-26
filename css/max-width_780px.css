@@ -22,8 +22,8 @@
     }
     /*PLATS*/
 
-    /*#sect2{
-      background: white;/*enlève l'image de fond en forme d'étoile
+    #sect2{
+      background: white;/*enlève l'image de fond en forme d'étoile*/
     }
     #sect3::after{
         background: white;
@@ -33,7 +33,7 @@
     }
     #sect4 ._objets{
       justify-content: center;
-    }*/
+    }
 
     #_plats{
       height: 600px;
@@ -46,7 +46,7 @@
       display: block;
       width: 100%;
       margin: 0;
-      padding:0;
+      padding:0px;
     }
     #_makis .images figure, #_makis .images figure figcaption{
       display:flex;
@@ -63,7 +63,7 @@
     }
     
     #_makis .images:not(:last-child){
-     margin-bottom: 15px;
+     margin-bottom: 5px;
     }
    
     #_plats .images{

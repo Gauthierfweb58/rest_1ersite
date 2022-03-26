@@ -6,31 +6,29 @@ pour nous assurer d’avoir un affichage cohérent d’un navigateur à l’autr
 html, body * {
   margin:0px;
   padding: 0px;
-  box-sizing: border-box; /* indique au navigateur de prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur.
-   Autrement dit, si on définit un élément avec une largeur de 100 pixels, ces 100 pixels inclueront la bordure et le remplissage éventuellement ajoutés 
-   et c'est le contenu de la boîte qui sera compressé pour absorber cette largeur supplémentaire. Cela permet généralement de simplifier le dimensionnement des éléments.*/
+  box-sizing: border-box;
   }
 
 /*EN TETE*/
 header {
-  display: flex; /*conteneur flexible*/
-  position: sticky; /*reste figé en haut en déroulant*/
+  display: flex;
+  position: sticky; 
   width: 100%;
-  height: 80px; /*hauteur*/
+  height: 80px;
   background-color: rgb(255, 255, 255);
-  z-index: 3; /*niveau ordre par dessus*/
-  top: 0; /*top :0px si on souhaite que le menu reste figé en haut de la page.*/
+  z-index: 3; 
+  top: 0;
   padding: 20px 20px; /*écart interne dans le header*/
 }
 header .logo {
-  margin-left: 10%; /*% écartement marge du bord gauche*/
+  margin-left: 10%;
   margin-right: auto;
 }
 .logo {
   display: inline-block;
   vertical-align: middle;
-  height: 100%; /*hauteur des logos*/
-  white-space: nowrap; /*Les blancs sont regroupés comme avec normal mais les retours à la ligne automatiques sont supprimés.*/
+  height: 100%;
+  white-space: nowrap;
 }
 
 .logo img {
@@ -45,8 +43,8 @@ header .logo {
 /* accès 1er enfant*/
 .logo:hover img:nth-child(1) {
   animation-name: animation_logo;
-  animation-duration: 0.5s; /*durée de l'animation*/
-  transition-timing-function: ease-in; /*animation logo header début lent*/
+  animation-duration: 0.5s;
+  transition-timing-function: ease-in;
 }
 
 @keyframes animation_logo {
@@ -79,12 +77,12 @@ header nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  margin-right: 400px ; /*écart du menu de 850px à partir de la gauche*/
+  margin-right: 400px ; /*écart du menu de 400px à partir de la gauche*/
 }
 header nav ul {
   display: flex;
   align-items: center; /*aligne les éléments au centre*/
-  height: 100%; /*hauteur*/
+  height: 100%; 
   margin: auto; /*à 0*/
   list-style-type: none; /*enlève les puces de la liste*/
 }
@@ -97,9 +95,9 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: inherit;/*par défaut*/
+  color: inherit;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px; /*taille police*/
+  font-size: 20px;
   text-decoration: none; /*pas de surlignage sous les liens du menu*/
 }
 
@@ -108,12 +106,8 @@ nav a:hover {
 }
 header .menu_burger{
   display: none;
- /*visibility: hidden; 
- Il existe cependant une différence de taille entre ces deux méthodes :
- appliquer un visibility: hidden sur un élément comme un div par exemple va simplement cacher cet
- élément mais ne va pas le retirer du flux de la page ce qui signifie que l’espace qu’il occupait lorsqu’il
- était visible va être conservé tandis qu’appliquer un display: none va non seulement masquer l’élément 
- en question mais va en plus permettre aux autres éléments d’occuper l’espace de l’élément caché.*/
+ /*visibility: hidden; */
+
 }
 
 /*TITRES*/
@@ -211,8 +205,8 @@ figcaption {
 
 .bouton:hover {
   /*au survol du bouton*/
-  transform: scale(1.03); /*modifie échelle du bouton*/
-  opacity: 0.9; /*avec opacité*/
+  transform: scale(1.03);
+  opacity: 0.9;
 }
 
 /* conteneur OBJETS*/
@@ -244,7 +238,7 @@ section::after {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;/*en dessous*/
+  z-index: -1;
 }
 
 /*SECT1*/
@@ -272,10 +266,10 @@ section::after {
 
 .images {
   position: relative;
-  vertical-align: top; /*en haut*/
+  vertical-align: top; 
   width: 100%;
-  height: 100%; /*largeur*/
-  border-radius: 25px; /*arrondi angle de la bordure*/
+  height: 100%;
+  border-radius: 25px;
   margin: 15px;
   padding: 0 20px 0 20px; /*écart interne entre les images gauche et droite*/
 }
@@ -283,7 +277,7 @@ section::after {
   position: absolute;
   z-index: 2; /*ordre affichage fond blanc*/
   margin: 0;
-  border-radius: 25px; /*bordure arrondie*/
+  border-radius: 25px; 
 }
 
 .images img {
@@ -293,7 +287,7 @@ section::after {
 }
 .images figcaption {
   text-align: center;
-  line-height: 25px; /*hauteur de ligne*/
+  line-height: 25px;
   font-size: 18px;
   padding: 20px 10px 20px 10px; /*écart entre le texte du dessous et chaque image*/
 }
@@ -314,8 +308,8 @@ font-size: 25px;
   display: flex;
 }
 #_plats .images {
-  width: 320px; /*largeur conteneur plats*/
-  height: 300px;/*hauteur conteneur plats*/
+  width: 320px; 
+  height: 300px;
 }
 
 #_plats .images::after{
@@ -334,7 +328,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 
 #sect2 {
   background: url("../img/decor_1.svg") no-repeat; /*image étoile*/
-  display: block; /*de type block*/
+  display: block; 
   background-position: 95% 2%; /* marge à droite se positionne à 95% sur la droite et 4% vers le bas du haut de la sect2*/
 }
 
@@ -368,8 +362,8 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 /*MAKIS*/
 
 #_makis .images {
-  width: 270px; /*largeur conteneur makis*/
-  height: 300px;/*hauteur conteneur makis*/
+  width: 270px; 
+  height: 300px;
 }
 #_makis {
   box-shadow: none;
@@ -397,7 +391,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 /*rotation animation*/
 .rot {
   position: absolute;
-  width: 85px; /*largeur*/
+  width: 85px;
   height: 100px;
   margin-left: -160px; /*alignement sur la gauche */
   bottom: -40px; /*alignement sur le bas pour voir la rotation*/
@@ -539,8 +533,8 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 }
 
 .moyens_cmd .façon_cmd img {
-  width: 70px; /*hauteur img*/
-  height: 70px; /*largeur img*/
+  width: 70px; 
+  height: 70px;
 }
 /*FORMULAIRE sect5*/
 
@@ -549,7 +543,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
   width: 100%;
   box-shadow: 0px 4px 61px 10px rgba(0, 0, 0, 0.05);
   border-radius: 30px;
-  max-width: 1300px;/*largeur maximale*/
+  max-width: 1300px;
   margin: auto;
 }
 /*titre*/
@@ -629,7 +623,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 }
 
 #sect5 h5 {
-  line-height: 25px;/*interligne titre h5*/
+  line-height: 25px;
 }
 .form_droite_image {
   background-image: url("../img/illustration_formulaire.jpg");
