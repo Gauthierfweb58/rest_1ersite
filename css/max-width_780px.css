@@ -47,28 +47,38 @@
     
     #_makis{
       display: block;
-      width: 100%;
+      width:auto;
       margin: 0;
-      padding:0px;
+      padding:0;
     }
-    #_makis .images figure, #_makis .images figure figcaption{
+    #_makis .images figure figcaption, #_makis .images figure{
       display:flex;
       align-items: center;
     }
-    #_makis .images figure figcaption{
-    flex-direction: column;
-    align-items: center;
-    justify-content:flex-start;
-    }
-    #_makis .images figure figcaption,
-    #_makis .images figure figcaption p{
+    #_makis .images figure figcaption,#_makis .images figure figcaption p{
       text-align: left;
     }
-    
-    #_makis .images:not(:last-child){
-     margin-bottom: 5px;
+    #_makis .images figure figcaption{
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content:center;
     }
+    #_makis .images figure figcaption p{
+      margin:0;
+    }
+    .rot{
+      display: none;
+    }
+    #_makis .images:not(:last-child){
+     margin-bottom: 2px;
+    }
+
+   #makis .images figure figcaption p:nth-child(1){
+    font-size: 18px;
+    margin-bottom: 10px;
+   }
    
+
     #_plats .images{
       position: absolute;
       opacity: 0;
@@ -170,6 +180,11 @@
       width: 100%;
       padding:0;
     }
+    .formulaire_nom_prenom,.formulaire_contact{
+      display:block;
+      width: 100%;
+    }
+
     /*.translation_sect3_4 {
       position: relative;
       height: auto;

@@ -16,7 +16,7 @@ header .logo {
   margin-right: auto;
 }
 #sect1 .souligne_rose {
-  background-position: 0px 95%;
+  background-position: 0px 94%;
 }
 
 h1 {
@@ -25,10 +25,14 @@ h1 {
 h2 {
   font-size: 40px;
 }
-h3 {
-  font-size: 22px;
-}
 html,body {
   font-size: 14px;
+  }
+  footer .categorie_footer{
+    text-align:center;
+  }
+  footer, section {
+    padding-left: 3%;
+    padding-right:10%;
   }
 }

@@ -184,14 +184,18 @@ figcaption {
 
 .t_gris_bleu {
   color: #5E6282;
-  ;
 }
 
 .t_fonce {
   color: rgb(31, 24, 24);
 }
 
-
+p,figcaption,button,a,label,input {
+  font-family: "poppins-regular";
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+}
 
 /*BOUTONS*/
 
@@ -279,13 +283,13 @@ section::after {
   position: relative;
   vertical-align: top; 
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 25px;
   margin: 20px;
   padding: 0 20px 0 20px; /*écart interne entre les images gauche et droite*/
 }
 .images figure {
-  position: absolute;
+  position: relative;
   z-index: 2; /*ordre affichage fond blanc*/
   margin: 0;
   border-radius: 25px; 
@@ -328,15 +332,14 @@ font-size: 20px;
 #_plats .images::after{
 content: "";
 position: absolute;
-width: 100%;
-height: 100%;
+width: 87%; /*permet de retirer les bords qui dépassent*/
+height: 400px;
 top:0;
-left :-1px;
-z-index: 1;
-opacity: 1;
+left :20px;
+z-index:1;
 background-color: white;
 border-radius: 25px;
-box-shadow: 5px 10px 25px 5px rgba(0, 0, 0, 0.05);
+box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 }
 
 #sect2 {
@@ -366,8 +369,8 @@ box-shadow: 5px 10px 25px 5px rgba(0, 0, 0, 0.05);
   position: absolute;
   width: 75%;
   height: 60%;
-  right: -120px;
-  top: 120px;
+  right: -115px;
+  top: 125px;
   bottom: 0;
   z-index: 2;
 }
@@ -396,7 +399,6 @@ box-shadow: 5px 10px 25px 5px rgba(0, 0, 0, 0.05);
   border-radius: 25px;
   transition: opacity 0.2s;
   transition-delay: 0.1s;
-  box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05);
 }
 
 #_makis .images:hover::after {
@@ -651,7 +653,7 @@ footer section {
 
 footer {
   background-color: #f3f3f3da;
-  padding: 80px 8% 20px;
+  padding: 100px 8% 20px;
 }
 
 /*footer > p{
@@ -675,10 +677,10 @@ footer .categorie_footer {
   padding: 0 25px 0 25px;
 }
 
-footer p,
-.gris_bleu {
+footer p{
   font-size: 21px;
   line-height: 200%;
+  
 }
 
 /*bouton google play et apple*/
@@ -739,6 +741,10 @@ footer p a:hover{
 }
 #footer_telechargements p {
   margin: 25px 0 30px;/*écartement bouton uberEats et le paragraphe télécharger UberEats*/
+}
+
+footer a{
+  color:#5e6282
 }
 
 
