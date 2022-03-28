@@ -3,7 +3,7 @@
   d'un élément.*/
 /*reset des marges intérieures et extérieures des différents éléments de notre page 
 pour nous assurer d’avoir un affichage cohérent d’un navigateur à l’autre.*/
-html, body * {
+ * {
   margin:0px;
   padding: 0px;
   box-sizing: border-box;
@@ -18,6 +18,7 @@ header {
   background-color: rgb(255, 255, 255);
   z-index: 3; 
   top: 0;
+  left: 0;
   padding: 20px 20px; /*écart interne dans le header*/
 }
 header .logo {
@@ -77,7 +78,7 @@ header nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  margin-right: 400px ; /*écart du menu de 400px à partir de la gauche*/
+  margin-right: 400px ;/*écart du menu de 400px à partir de la gauche*/
 }
 header nav ul {
   display: flex;
@@ -85,6 +86,7 @@ header nav ul {
   height: 100%; 
   margin: auto; /*à 0*/
   list-style-type: none; /*enlève les puces de la liste*/
+  
 }
 
 header nav ul li {
@@ -115,31 +117,36 @@ header .menu_burger{
 h1 {
   font-family: "volkhov-bold";/*relié au fichier font.css*/
   color: white;
-  font-size: 100px;
+  font-size: 90px;
+  line-height: 100px;
 }
 
 h2 {
   font-family: "volkhov-bold";
-  color: rgb(2, 2, 53);
-  font-size: 70px;
+  color: #14183E;
+  font-size: 50px;
+  line-height: 64px;
 }
 
 h3 {
   font-family: "poppins-bold";
-  color: rgb(245, 158, 148);
-  font-size: 20px;
+  color: rgb(177, 72, 60);
+  font-size:20px;
+  text-transform: uppercase;
 }
 
 h4 {
   font-family: "poppins-bold";
   color: #5E6282;
-  font-size: 25px;
+  font-size: 20px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 h5 {
+  font-family: "poppins-regular";
   color: rgba(255, 255, 255, 0.6); /*transparence*/
-  font-size: 20px;
+  font-size: 16px;
 }
 
 /*COULEURS TEXTE*/
@@ -156,7 +163,7 @@ figcaption {
 }
 
 .t_rose {
-  color: rgb(245, 158, 148);
+  color: #df6951;
 }
 
 .t_gris1 {
@@ -176,12 +183,15 @@ figcaption {
 }
 
 .t_gris_bleu {
-  color: rgba(161, 161, 196, 0.9);
+  color: #5E6282;
+  ;
 }
 
-.t.fonce {
+.t_fonce {
   color: rgb(31, 24, 24);
 }
+
+
 
 /*BOUTONS*/
 
@@ -198,13 +208,12 @@ figcaption {
 
 .bouton.orange {
   background-color: rgba(240, 169, 16,1);
-  box-shadow: 0px 10px 20px 10px rgba(241, 165, 1, 0.1); /*ombre et transparence*/
-  font-size: 25px;
+  box-shadow: 0px 20px 30px 10px rgba(241, 165, 1, 0.1); /*ombre et transparence*/
+  font-size: 20px;
   border-radius: 15px;
 }
 
 .bouton:hover {
-  /*au survol du bouton*/
   transform: scale(1.03);
   opacity: 0.9;
 }
@@ -221,8 +230,7 @@ figcaption {
 section {
   position: relative;
   padding: 100px 10% 100px 10%;
-  overflow: hidden; /*La propriété overflow-x permet de définir les mécanismes à utiliser (rognage, ascenseurs, dépassement, etc.)
-  lorsque le contenu dépasse des bords droit et gauche de la boîte de contenu.*/
+  overflow: hidden;
 }
 section article {
   max-width: 650px;/*taille maxi*/
@@ -261,6 +269,9 @@ section::after {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+#sect1 h5{
+  line-height: 35px;
+}
 
 /*SECT2*/
 
@@ -270,7 +281,7 @@ section::after {
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  margin: 15px;
+  margin: 20px;
   padding: 0 20px 0 20px; /*écart interne entre les images gauche et droite*/
 }
 .images figure {
@@ -289,19 +300,21 @@ section::after {
   text-align: center;
   line-height: 25px;
   font-size: 18px;
-  padding: 20px 10px 20px 10px; /*écart entre le texte du dessous et chaque image*/
+  padding: 20px; /*écart entre le texte du dessous et chaque image*/
 }
 .images figcaption p {
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
   justify-content: center;
+  margin: 16px 0;
+  padding: 0px 30px;
 }
 
 /*paragraphe 1er enfant pour grossir premier titre enfant */
 .images figcaption p:nth-child(1) {
 font-family: "OpenSans-Regular";
 font-weight: 700;
-font-size: 25px;
+font-size: 20px;
 }
 
 #sect2 #_plats{
@@ -315,15 +328,15 @@ font-size: 25px;
 #_plats .images::after{
 content: "";
 position: absolute;
-width: 95%;
+width: 100%;
 height: 100%;
 top:0;
-left : 20px;
+left :-1px;
 z-index: 1;
 opacity: 1;
 background-color: white;
 border-radius: 25px;
-box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
+box-shadow: 5px 10px 25px 5px rgba(0, 0, 0, 0.05);
 }
 
 #sect2 {
@@ -369,6 +382,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
   box-shadow: none;
   background-color: transparent;
 }
+
 #_makis .images::after {
   content: "";
   position: absolute;
@@ -379,11 +393,12 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
   z-index: 1;
   opacity: 0;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 25px;
   transition: opacity 0.2s;
   transition-delay: 0.1s;
   box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05);
 }
+
 #_makis .images:hover::after {
   opacity: 1;
   transition-delay: 0.2s;
@@ -435,11 +450,11 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 
 #sect3 .souligne_rose {
   /*dans le titre sous le mot voyage*/
+  background: url("../img/souligne_rose.svg") no-repeat;
   background-position: 0px 20%; /*descend sous le mot voyage*/
   margin: 100px 0 40px 0; /*écart entre le lecteur vidéo et le titre et le paragraphe */
 }
 
-/*lecteur vidéo*/
 .lecteur_video {
   display: flex;
   position: relative;
@@ -451,7 +466,6 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
   max-width: 100%;
   border-radius: 15px;
 }
-/*bouton lecteur vidéo*/
 .bouton_lect_video {
   display: flex;
   position: absolute;
@@ -462,18 +476,12 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
   background: rgb(255, 255, 255);
   border-radius: 50%; /*pour faire un cercle*/
   cursor: pointer;
-  transform: translate(
-    -50%,
-    -50%
-  ); /*La fonction translate() permet de déplacer un élément sur le plan représenté par le document.
-  Cette transformation est définie à l'aide d'un vecteur dont les coordonnées définissent la quantité de déplacement sur chaque axe
- (horizontal et vertical)déplace le bouton du lecteur vidéo*/
+  transform: translate(-50%,-50%);
 }
 
 .bouton_lect_video img {
   margin: auto;
 }
-
 /*surlignage bouton lecteur vidéo*/
 .bouton_lect_video:hover img {
   opacity: 0.9;
@@ -481,10 +489,10 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 
 /*SECTION 4*/
 #sect4 {
-  padding-top: 400px;
+  padding-top: 400px;/*pour être en dessous des 2 photos qui dépassent*/
 }
 #sect4 article {
-  max-width: 600px;
+  max-width: 100%;
 }
 #sect4 {
   background: url("../img/illustration_commander.jpg") no-repeat;
@@ -548,7 +556,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 }
 /*titre*/
 ._formulaire h5 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 5px;
   padding: 20px 0 40px;
 }
@@ -572,7 +580,7 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 }
 .formulaire_nom_prenom .formulaire_contact {
   display: inline-block;
-  width: 40%;
+  width: 45%;
 }
 
 .formulaire_contact {
@@ -630,6 +638,9 @@ box-shadow: 0px 10px 25px 2px rgba(0, 0, 0, 0.05);
 #sect5 h5 {
   line-height: 25px;
 }
+#sect5 h2{
+  margin-bottom: 50px;
+}
 
 
 /*footer*/
@@ -642,10 +653,12 @@ footer {
   background-color: #f3f3f3da;
   padding: 80px 8% 20px;
 }
-footer > p {
-  font-size: 18px;
-  line-height: 100%;
-}
+
+/*footer > p{
+  font-family: "poppins-regular";
+  font-weight: 500;
+  font-size: 16px;
+ }*/
 footer .copyright {
   margin: 0;
   font-size: 16px;

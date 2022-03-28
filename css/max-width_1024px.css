@@ -18,4 +18,17 @@ header .logo {
 #sect1 .souligne_rose {
   background-position: 0px 95%;
 }
+
+h1 {
+  font-size: 75px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 22px;
+}
+html,body {
+  font-size: 14px;
+  }
 }
