@@ -1,212 +1,294 @@
 /*PORTABLES*/
 @media screen and (max-width:780px){
-    section article{
+  
+  html, body {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  section {
+    position: relative;
+    padding:80px;
+    margin:0;
+    overflow: hidden;
+  }
+  section article{
     width: 100%;
     text-align: center;
+    margin:unset;
+  }
+  section article {
+    max-width: 100%;/*taille maxi*/
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 30px;
     }
-    
-    h1 {
-      font-size: 45px;
-    }
-    h2 {
-      font-size: 30px;
-    }
-    h3 {
-      font-size: 20px;
-    }
-    h4 {
-      font-size: 20px;
-    }
-    h5 {
-      font-size: 16px;
-    }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  #sect1 .bouton.orange {
+    margin-top: 40px;
+    margin-bottom: 5px;
+  }
+  #sect1 .souligne_rose {
+    background-position: 60% 90%;
+    background-size:50%;
+  }
+  #sect1 h5{
+    line-height: px;
+  }
     /*PLATS*/
-
-    #sect2{
-      background: white;/*enlève l'image de fond en forme d'étoile*/
+  ._objets{
+  text-align: left;
+  }
+  #sect2{
+    display:block;
+    text-align: center;
+    background: white;/*enlève l'image de fond en forme d'étoile*/
+    width:100%;
+  }
+  #sect3{
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  #sect3 article {
+    max-width: 100%;
+  }
+  #sect3::after{
+    background: transparent;
+  }
+  #sect3 article .souligne_rose {
+    display: none;
+  }
+  #chef_mobile{
+    display: unset;
+  }
+  #sect3 h5{
+    display: none;
+  }
+  
+  #_plats{
+    height: 600px;
+  }
+  #_plats .images{
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+  }
+  #_plats .filet{
+    display:none;
+  }
+     /*CAROUSSEL*/
+  #_plats .images:nth-child(1){
+    animation : defilement_1 20s  infinite 3s;
+  }
+  #_plats .images:nth-child(2){
+    animation : defilement_2 20s  infinite 3s;
+  }
+  #_plats .images:nth-child(3){
+    animation : defilement_3 20s  infinite 3s;
+  }
+@keyframes defilement_1{
+  0%{
+    opacity:0;/*INVISIBLE*/
+    transform:translateX(50%);
     }
-    #sect3::after{
-        background: white;
+  3%{
+    opacity:1;/*VISIBLE*/
+    transform:translateX(0);/*SE DEPLACE*/
     }
-    #sect4{
-      background: white;
+  30%{
+    opacity:1;
+    transform:translateX(0);
     }
-    #sect4 ._objets{
-      justify-content: center;
+  36%{
+    opacity:0;
+    transform:translateX(-50%);
     }
-    #sect3 .souligne_rose {
-      display: none;
+  100%{
+    opacity:0;
+    transform:translateX(-50%);
     }
-
-    #_plats{
-      height: 600px;
+  }
+     
+@keyframes defilement_2{
+  0%{
+    opacity:0;
+    transform:translateX(50%);
     }
+  36%{
+    opacity:0;
+    transform:translateX(50%);
+    }
+  39%{
+    opacity:1;
+    transform:translateX(0);
+    }
+  69%{
+    opacity:1;
+    transform:translateX(0);
+    }
+  72%{
+    opacity:0;
+    transform: translate(-50%); /*SE DEPLACE*/
+    }
+  100%{
+    opacity:0;
+    transform:translateX(-50%);
+    }
+  }
     
+@keyframes defilement_3{
+  0%{
+    opacity:0;
+    transform:translateX(50%);
+    }
+  72%{
+    opacity:0;
+    transform:translateX(50%);
+    }
+  75%{
+    opacity:1;
+    transform:translateX(0);
+    }
+  97%{
+    opacity:1;
+    transform:translateX(0);
+    }
+  100%{
+    opacity:0;
+    transform:translateX(-50%);
+    }
+  }
     /*MAKIS*/
-    
-    
-    #_makis{
-      display: block;
-      width:auto;
-      margin: 0;
-      padding:0;
-    }
-    #_makis .images figure figcaption, #_makis .images figure{
-      display:flex;
-      align-items: center;
-    }
-    #_makis .images figure figcaption,#_makis .images figure figcaption p{
-      text-align: left;
-    }
-    #_makis .images figure figcaption{
-    flex-direction:column;
+  
+  #_makis{
+    display: block;
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+  #_makis .images {
+    width: 100%; 
+    height: auto;
+  }
+  #_makis .images figure figcaption, #_makis .images figure{
+    display:flex;
     align-items: flex-start;
-    justify-content:center;
-    }
-    #_makis .images figure figcaption p{
-      margin:0;
-    }
-    .rot{
-      display: none;
-    }
-    #_makis .images:not(:last-child){
-     margin-bottom: 2px;
-    }
-
-   #makis .images figure figcaption p:nth-child(1){
+  }
+  #_makis .images figure figcaption, #_makis .images figure figcaption p{
+    text-align: left;
+  }
+  #_makis .images figure figcaption {
+  flex-direction:column;
+  justify-content:center;
+  }
+  #_makis .images figure figcaption p{
+    margin:0;
+    font-size: 14px;
+  }
+  #_makis .images figure img{
+    max-width: 100px;
+    max-height: 100px; 
+  }
+  #_makis .images:not(:last-child){
+    margin-bottom:2px;
+  }
+  #_makis .images figure figcaption p:nth-child(1){
     font-size: 18px;
     margin-bottom: 10px;
-   }
-   
-
-    #_plats .images{
-      position: absolute;
-      opacity: 0;
-      margin: 0;
-    }
-    #_plats .filet{
-      display:none;
-    }
-     /*CAROUSSEL*/
-    #_plats .images:nth-child(1){
-      animation : defilement_1 20s  infinite 3s;
-    }
-    #_plats .images:nth-child(2){
-      animation : defilement_2 20s  infinite 3s;
-    }
-    #_plats .images:nth-child(3){
-      animation : defilement_3 20s  infinite 3s;
-    }
-    @keyframes defilement_1{
-      0%{
-        opacity:0;/*INVISIBLE*/
-        transform:translateX(50%);
-      }
-      3%{
-        opacity:1;/*VISIBLE*/
-        transform:translateX(0);/*SE DEPLACE*/
-      }
-      30%{
-        opacity:1;
-        transform:translateX(0);
-      }
-      36%{
-        opacity:0;
-        transform:translateX(-50%);
-      }
-      100%{
-        opacity:0;
-        transform:translateX(-50%);
-      }
-    }
-     
-    @keyframes defilement_2{
-      0%{
-        opacity:0;
-        transform:translateX(50%);
-      }
-      36%{
-        opacity:0;
-        transform:translateX(50%);
-      }
-      39%{
-        opacity:1;
-        transform:translateX(0);
-      }
-      69%{
-        opacity:1;
-        transform:translateX(0);
-      }
-    
-      72%{
-        opacity:0;
-        transform: translate(-50%); /*SE DEPLACE*/
-      }
-      100%{
-        opacity:0;
-        transform:translateX(-50%);
-      }
-    }
-    
-    @keyframes defilement_3{
-      0%{
-        opacity:0;
-        transform:translateX(50%);
-      }
-      72%{
-        opacity:0;
-        transform:translateX(50%);
-      }
-      75%{
-        opacity:1;
-        transform:translateX(0);
-      }
-      97%{
-        opacity:1;
-        transform:translateX(0);
-      }
-      100%{
-        opacity:0;
-        transform:translateX(-50%);
-      }
-    }
-    .form_droite_image{
-        display: none;
-    }
-    ._formulaire{
-        box-shadow: none;
-    }
-    .form_gauche{
-      width: 100%;
-      padding:0;
-    }
-    .formulaire_nom_prenom,.formulaire_contact{
-      display:block;
-      width: 100%;
-    }
-
-    /*.translation_sect3_4 {
-      position: relative;
-      height: auto;
-      width: 100%;
-      z-index: initial;
-      left: initial;
-      bottom: initial;
-    }*/
-    .translation_sect3_4{
-      display:flex;
-      flex-wrap: wrap;
-      width: 100%;
-      height: auto;
-      position: relative;
+  }
+  .rot{
+    display: none;
+  }
+  #sect3 .lecteur_video{
+    width: 100%;
+    height: auto;
+    border-radius:0;
+    padding: 0px;
+    margin: 0px;
+  }
+  #sect3 .lecteur_video{
+    display: flex;
+    position: relative;
+  }
+  #sect3 .lecteur_video >img{
+    flex:1 1;/*permet d'agrandir et diminuer*/
+    border-radius:0;
+  }
+  .translation_sect3_4 {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    flex-wrap: nowrap;
+  }
+  .translation_sect3_4{
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    position:relative;
     }
   .translation_sect3_4 img{
-    max-width: 100%;
-    max-height: 100%;
-
+    width: 100%;
+    height: 100%;
+    margin:0;
   }
-  ._objets{
-    text-align: left;
+  /*.translation_sect3_4 {
+    display:flex;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+  .translation_sect3_4 img{
+    width: 100%;
+    height: 100%;
+  }*/
+  #sect4{
+    background: white;
+  }
+  #sect4 {
+    padding-top: 50px;/*pour être en dessous des 2 photos qui dépassent*/
+  }
+  #sect4 ._objets{
+    justify-content: center;
+  }
+  .form_droite_image{
+    display: none;
+    }
+  ._formulaire{
+    box-shadow: none;
+    }
+  .form_gauche{
+    width: 100%;
+    padding:0;
+    }
+  .formulaire_nom_prenom, .formulaire_contact{
+    display:block;
+    width: 100%;
+    }
+  .bouton.bouton_envoyer {
+    margin: 40px 0px 20px 25%;
+    border-radius: 10px;
+    background-color: #5c96d4;
+    box-shadow: 0px 5px 80px 10px rgb(214 214 219);
   }
   }
 

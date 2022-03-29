@@ -1,9 +1,9 @@
 /*ECRAN*/
 @media screen and (max-width: 1320px){
-    .body {
+    body {
       display: block;
     }
-    .main {
+    main {
       width:100%;
     }
   }

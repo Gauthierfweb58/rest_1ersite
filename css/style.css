@@ -449,6 +449,9 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   background: url("../img/illustration_chef.jpg") no-repeat;
   background-size: cover;
 }
+#chef_mobile{
+  display: none;
+}
 
 #sect3 .souligne_rose {
   /*dans le titre sous le mot voyage*/
@@ -464,7 +467,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   height: 180px;
   border-radius: 15px;
 }
-.lecteur_video img {
+#sect3.lecteur_video img {
   max-width: 100%;
   border-radius: 15px;
 }
@@ -742,7 +745,6 @@ footer p a:hover{
 #footer_telechargements p {
   margin: 25px 0 30px;/*écartement bouton uberEats et le paragraphe télécharger UberEats*/
 }
-
 footer a{
   color:#5e6282
 }
