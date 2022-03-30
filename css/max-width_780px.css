@@ -8,7 +8,7 @@
   }
   section {
     position: relative;
-    padding: 50px;
+    padding: 80px;
     margin:0;
     overflow: hidden;
   }
@@ -42,7 +42,7 @@
     margin-bottom: 5px;
   }
   #sect1 .souligne_rose {
-    background-position: 50% 90%;
+    background-position: 50% 95%;
     background-size:30%;
   }
   #sect1 h5{
