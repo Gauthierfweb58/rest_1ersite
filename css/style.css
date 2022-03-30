@@ -1,6 +1,3 @@
-
-/*La propriété content est utilisée avec les pseudo-éléments ::before et ::after afin de générer le contenu 
-  d'un élément.*/
 /*reset des marges intérieures et extérieures des différents éléments de notre page 
 pour nous assurer d’avoir un affichage cohérent d’un navigateur à l’autre.*/
  * {
@@ -31,15 +28,12 @@ header .logo {
   height: 100%;
   white-space: nowrap;
 }
-
 .logo img {
   max-height: 100%;
 }
-
 .logo img:nth-child(1) {
   margin-right: 20px; /*marge droite du 1er enfant soit entre logo1 et logo2*/
 }
-
 /*animation 1er logo header à gauche 1er enfant au survol*/
 /* accès 1er enfant*/
 .logo:hover img:nth-child(1) {
@@ -47,7 +41,6 @@ header .logo {
   animation-duration: 0.5s;
   transition-timing-function: ease-in;
 }
-
 @keyframes animation_logo {
   from {
     transform: rotate(0deg); /*départ de l'animation à partir*/
@@ -78,7 +71,7 @@ header nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  margin-right: 400px ;/*écart du menu de 400px à partir de la gauche*/
+  margin-right: 500px ;/*écart du menu de 400px à partir de la gauche*/
 }
 header nav ul {
   display: flex;
@@ -90,16 +83,17 @@ header nav ul {
 }
 
 header nav ul li {
-  margin-right: 40px;
+  padding-right: 40px; /*padding au lieu de margin permet d'avoir un lien clicable plus élargi*/
   flex:1 1 1; /*nos différents éléments de menu vont tous avoir la même taille de base avec flex-basis : 0 et vont pouvoir grandir 
   ou rétrécir pour absorber l’espace vide du menu ou pour faire de la place à de nouveaux éléments.*/
    /*écart entre les menus*/
 }
 
 header nav ul li a {
-  color: inherit;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  color: #212832;
+  font-family: Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 500;
   text-decoration: none; /*pas de surlignage sous les liens du menu*/
 }
 
@@ -119,6 +113,7 @@ h1 {
   color: white;
   font-size: 90px;
   line-height: 100px;
+  margin: 20px;
 }
 
 h2 {
@@ -126,6 +121,7 @@ h2 {
   color: #14183E;
   font-size: 50px;
   line-height: 64px;
+  margin-bottom: 40px;
 }
 
 h3 {
@@ -160,6 +156,8 @@ figcaption {
 
 .t_noir {
   color: #000;
+  font-family: poppins-bold;
+  font-weight: 500;
 }
 
 .t_rose {
@@ -171,7 +169,7 @@ figcaption {
 }
 
 .t_gris2 {
-  color: rgba(128, 128, 128, 0.9);
+  color: rgba(128, 128, 128, 0.5);
 }
 
 .t_gris3 {
@@ -185,11 +183,6 @@ figcaption {
 .t_gris_bleu {
   color: #5E6282;
 }
-
-.t_fonce {
-  color: rgb(31, 24, 24);
-}
-
 p,figcaption,button,a,label,input {
   font-family: "poppins-regular";
   font-weight: 400;
@@ -421,7 +414,10 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   transform: rotate(0deg);
   transition: 0.3s;
 }
-
+#sect3 h5{
+  line-height: 30px;
+  text-align: left;
+}
 /*SECT3*/
 /*permet de mettre les 2 photos à la fois sur la section 3 et section 4*/
 .translation_sect3_4 {
@@ -436,13 +432,13 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 }
 
 #sect3 {
-  padding-bottom: 800px;
+  padding-bottom: 450px;
   overflow: visible; /*La propriété CSS overflow est une propriété raccourcie qui définit comment gérer le
    dépassement du contenu d'un élément dans son bloc. Elle définit les valeurs des propriétés overflow-x et overflow-y. ici sera visible donc dépassement des photos*/
 }
 
 #sect3 article {
-  max-width: 700px;
+  width: 100%;
 }
 
 #sect3::after {
@@ -463,13 +459,12 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 .lecteur_video {
   display: flex;
   position: relative;
-  width: 300px;
+  width: 350px;
   height: 180px;
-  border-radius: 15px;
 }
-#sect3.lecteur_video img {
+#sect3 .lecteur_video img {
   max-width: 100%;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 .bouton_lect_video {
   display: flex;
@@ -499,6 +494,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 #sect4 article {
   max-width: 100%;
 }
+
 #sect4 {
   background: url("../img/illustration_commander.jpg") no-repeat;
   background-size: cover;
@@ -590,6 +586,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 
 .formulaire_contact {
   margin: 0 0 20px;
+  border-bottom: 1px solid rgb(218, 213, 213);
 }
 .formulaire_contact label {
   margin: 0 0 10px;
@@ -602,11 +599,11 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   transform: scale(1.02);
 }
 .formulaire_contact input {
-  margin: 0;/*Pour se débarrasser de cet espace, on « surcharge » le style par défaut avec une marge nulle grâce à margin: 0;.*/
+  margin: 0;
   padding: 0 0 20px; /*écartement entre les rubriques*/
   color: #e91f1f;
   width: 100%;
-  border: none;
+  border:none;
   outline: none;
   font-size: 16px;
   transition: transform 0.2s;
@@ -623,12 +620,13 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 .bouton.bouton_envoyer {
   margin: 40px 0px 20px 50px; 
   border-radius: 10px;
-  background-color: #5c96d4;
+  background-color: #007AFF;
   box-shadow: 0px 5px 80px 10px rgb(214, 214, 219); /*ombre et transparence*/
+  font-size: 18px;
 }
 /*écart entre la côche et le span mot "envoyer" bouton bleu dans le formulaire*/
 .bouton.bouton_envoyer img {
-  margin: 0 30px 0 0;
+  margin: 0 20px 0 0;
 }
 .form_droite_image {
   background-image: url("../img/illustration_formulaire.jpg");
@@ -659,15 +657,10 @@ footer {
   padding: 100px 8% 20px;
 }
 
-/*footer > p{
-  font-family: "poppins-regular";
-  font-weight: 500;
-  font-size: 16px;
- }*/
 footer .copyright {
   margin: 0;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -682,8 +675,7 @@ footer .categorie_footer {
 
 footer p{
   font-size: 21px;
-  line-height: 200%;
-  
+  line-height: 30px;
 }
 
 /*bouton google play et apple*/
@@ -694,12 +686,17 @@ footer p{
 }
 
 .telecharger {
+  width: 120px;
+  height: 35px;
   background-color: black;
-  padding: 15px 15px;
+  padding:5px 10px;
   color: white;
-  border: 2px solid none;
-  border-radius: 40px;
-  font-size: 12px;
+  border: 1px solid none;
+  border-radius: 20px;
+  font-size: 10px;
+}
+.telecharger img{
+margin: 0 5px 0 5px;
 }
 
 #footer_telechargements .logo_UberEats {
@@ -709,10 +706,11 @@ footer p{
 #logo_jadoo_footer .logo {
   display: block;
   height: auto;
+  margin-bottom: 30px;
 }
 
 #logo_jadoo_footer .logo img {
-  height: 70px;
+  height: 60px;
 }
 #footer_telechargements .logo_UberEats{
   height: 70px;
@@ -723,9 +721,11 @@ footer p{
 }
 #guide_footer .guide_titre {
   font-size: 30px;
+  font-family: poppins-bold;
 }
 footer p a{
   text-decoration: none;
+  color:#5e6282
 }
 footer p a:hover{
   text-decoration: underline;
@@ -734,7 +734,7 @@ footer p a:hover{
   margin: 0;
 }
 #guide_footer .guide_titre:not(:last-child) {
-  margin: 0 0 20px; /*écartement vertical titre et paragraphes situés en dessous*/
+  margin: 0 0 40px; /*écartement vertical titre et paragraphes situés en dessous*/
 }
 #guide_footer p:not(:last-child) {
   margin: 0 0 10px;/*écartement vertical entre les paragraphes*/
@@ -745,9 +745,7 @@ footer p a:hover{
 #footer_telechargements p {
   margin: 25px 0 30px;/*écartement bouton uberEats et le paragraphe télécharger UberEats*/
 }
-footer a{
-  color:#5e6282
-}
+
 
 
 

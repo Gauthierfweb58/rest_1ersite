@@ -8,7 +8,7 @@
   }
   section {
     position: relative;
-    padding:80px;
+    padding: 50px;
     margin:0;
     overflow: hidden;
   }
@@ -26,7 +26,7 @@
     font-size: 45px;
   }
   h2 {
-    font-size: 30px;
+    font-size: 50px;
     }
   h3 {
     font-size: 20px;
@@ -42,15 +42,18 @@
     margin-bottom: 5px;
   }
   #sect1 .souligne_rose {
-    background-position: 60% 90%;
-    background-size:50%;
+    background-position: 50% 90%;
+    background-size:30%;
   }
   #sect1 h5{
-    line-height: px;
+    line-height: 20px;
+  }
+  #sect1 h1{
+    line-height: 50px;
   }
     /*PLATS*/
   ._objets{
-  text-align: left;
+    text-align: left;
   }
   #sect2{
     display:block;
@@ -194,6 +197,7 @@
   #_makis .images figure figcaption {
   flex-direction:column;
   justify-content:center;
+  padding-left:5px;
   }
   #_makis .images figure figcaption p{
     margin:0;
@@ -270,6 +274,8 @@
   #sect4 ._objets{
     justify-content: center;
   }
+  /*FORMULAIRE*/
+  
   .form_droite_image{
     display: none;
     }
@@ -280,15 +286,28 @@
     width: 100%;
     padding:0;
     }
-  .formulaire_nom_prenom, .formulaire_contact{
+  .formulaire_nom_prenom .formulaire_contact{
     display:block;
     width: 100%;
     }
+  .form_gauche_donnees h5{
+    text-align: center;
+  }
+  .form_gauche_donnees h4{
+    display: none;
+  }
+  .form_gauche_donnees{
+    padding-top: 20px;
+  }
+
   .bouton.bouton_envoyer {
-    margin: 40px 0px 20px 25%;
+    margin: 40px 25% 20px 35%;
     border-radius: 10px;
     background-color: #5c96d4;
     box-shadow: 0px 5px 80px 10px rgb(214 214 219);
+  }
+  #sect5 h2{
+    margin-bottom: 0px;
   }
   }
 
