@@ -1,8 +1,8 @@
 /*reset des marges intérieures et extérieures des différents éléments de notre page 
 pour nous assurer d’avoir un affichage cohérent d’un navigateur à l’autre.*/
  * {
-  margin:0px;
-  padding: 0px;
+  margin:0;
+  padding: 0;
   box-sizing: border-box;
   }
 
@@ -65,7 +65,7 @@ header .logo {
     transform: rotate(0deg); /*retour initial*/
   }
 }
-/*BARRE NAVIGATION*/
+/*MENU NAVIGATION*/
 
 header nav {
   display: flex;
@@ -216,15 +216,7 @@ p,figcaption,button,a,label,input {
   opacity: 0.9;
 }
 
-/* conteneur OBJETS*/
-
-._objets {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
+/*SECTION*/
 section {
   position: relative;
   padding: 100px 8% 50px 8%;
@@ -235,10 +227,7 @@ section article {
 }
 /*session en arrière plan*/
 section::after { 
-  content: ""; /*La propriété content est utilisée avec les pseudo-éléments ::before et ::after afin de générer le contenu 
-  d'un élément ici vide on peut très bien suivant l'élément choisi exemple lui rajouter un point à la fin, un tiret, créer une ligne sous un titre .
-   idem pour ::before.
-   on peut aussi rajouter des guillemets pour des blockotes....*/
+  content: ""; 
   position: absolute;
   top: 0;
   right: 0;
@@ -258,8 +247,6 @@ section::after {
 
 #sect1 .souligne_rose {
   background: url("../img/souligne_rose.svg") no-repeat;
-}
-#sect1 .souligne_rose {
   margin: 50px 0 20px;
   background-position: 15px 95%; /*15px à partir de la gauche et 95% souligné rose*/
 }
@@ -272,6 +259,14 @@ section::after {
 }
 
 /*SECT2*/
+/* conteneur OBJETS*/
+
+._objets {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
 .images {
   position: relative;
@@ -304,7 +299,7 @@ section::after {
   font-size: 17px;
   text-align: center;
   justify-content: center;
-  margin: 16px 0;
+  margin: 18px 0;
   padding: 0px 30px;
 }
 
@@ -339,7 +334,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 #sect2 {
   background: url("../img/decor_1.svg") no-repeat; /*image étoile*/
   display: block; 
-  background-position: 95% 2%; /* marge à droite se positionne à 95% sur la droite et 4% vers le bas du haut de la sect2*/
+  background-position: 95% 3%; /* marge à droite se positionne à 95% sur la droite et 4% vers le bas du haut de la sect2*/
 }
 
 #sect2{
@@ -415,11 +410,11 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   transform: rotate(0deg);
   transition: 0.3s;
 }
+/*SECT3*/
 #sect3 h5{
   line-height: 30px;
   text-align: left;
 }
-/*SECT3*/
 /*permet de mettre les 2 photos à la fois sur la section 3 et section 4*/
 .translation_sect3_4 {
   position: absolute;
@@ -433,7 +428,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 }
 
 #sect3 {
-  padding-bottom: 450px;
+  padding-bottom: 400px;
   overflow: visible; /*La propriété CSS overflow est une propriété raccourcie qui définit comment gérer le
    dépassement du contenu d'un élément dans son bloc. Elle définit les valeurs des propriétés overflow-x et overflow-y. ici sera visible donc dépassement des photos*/
 }
@@ -442,7 +437,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   width: 100%;
 }
 
-#sect3::after {
+#sect3 {
   background: url("../img/illustration_chef.jpg") no-repeat;
   background-size: cover;
 }
@@ -457,7 +452,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   margin: 100px 0 40px 0; /*écart entre le lecteur vidéo et le titre et le paragraphe */
 }
 
-.lecteur_video {
+#sect3 .lecteur_video {
   display: flex;
   position: relative;
   width: 350px;
@@ -467,7 +462,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
   max-width: 100%;
   border-radius: 20px;
 }
-.bouton_lect_video {
+#sect3 .bouton_lect_video {
   display: flex;
   position: absolute;
   top: 50%; /*au centre du conteneur_video*/
@@ -490,7 +485,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 
 /*SECTION 4*/
 #sect4 {
-  padding-top: 400px;/*pour être en dessous des 2 photos qui dépassent*/
+  padding-top: 400px;/*pour être en dessous des 2 photos qui dépassent voir dans inspecteur*/
 }
 #sect4 article {
   max-width: 100%;
@@ -516,10 +511,6 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 
 .moyens_cmd figure {
   margin: 0;
-}
-
-.moyens_cmd .façon_cmd {
-  white-space: nowrap;
 }
 
 .moyens_cmd .façon_cmd img,
@@ -602,7 +593,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 .formulaire_contact input {
   margin: 0;
   padding: 0 0 20px; /*écartement entre les rubriques*/
-  color: #e91f1f;
+  color: #1f29e9;
   width: 100%;
   border:none;
   outline: none;
@@ -612,17 +603,14 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 /*La pseudo-classe :focus permet de cibler un élément lorsque celui-ci reçoit le focus
    (soit il est sélectionné à l'aide du clavier, soit il est activé avec la souris comme par exemple le champ d'un formulaire).*/
 .formulaire_contact input:focus {
-  margin: 0 0 -10px;
-  padding: 0 0 10px; /*aggrandit la petite fenêtre lorsque l'on clique sur l'élément du formulaire*/
   border-bottom: 1px solid #1519f3; /*surligne en bas en bleu quand on clique dans la case*/
   transform: scale(1.02);
 }
 /* décalage bouton dans le formulaire*/
 .bouton.bouton_envoyer {
-  margin: 40px 0px 20px 50px; 
+  margin: 40px 0px 20px 150px; 
   border-radius: 10px;
   background-color: #007AFF;
-  box-shadow: 0px 5px 80px 10px rgb(214, 214, 219); /*ombre et transparence*/
   font-size: 18px;
 }
 /*écart entre la côche et le span mot "envoyer" bouton bleu dans le formulaire*/
@@ -645,9 +633,7 @@ box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.05);
 #sect5 h2{
   margin-bottom: 50px;
 }
-
-
-/*footer*/
+/*FOOTER*/
 
 footer section {
   padding: 0;
@@ -656,13 +642,6 @@ footer section {
 footer {
   background-color: #f3f3f3da;
   padding: 100px 8% 20px;
-}
-
-footer .copyright {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 500;
-  text-align: center;
 }
 
 footer .categorie_footer {
@@ -678,7 +657,12 @@ footer p{
   font-size: 21px;
   line-height: 30px;
 }
-
+footer .copyright {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
 /*bouton google play et apple*/
 .telecharger * {
   /*tout les boutons*/
@@ -731,16 +715,13 @@ footer p a{
 footer p a:hover{
   text-decoration: underline;
 }
-#guide_footer p {
-  margin: 0;
-}
-#guide_footer .guide_titre:not(:last-child) {
+#guide_footer .guide_titre:nth-child(1){
   margin: 0 0 40px; /*écartement vertical titre et paragraphes situés en dessous*/
 }
 #guide_footer p:not(:last-child) {
   margin: 0 0 10px;/*écartement vertical entre les paragraphes*/
 }
-#guide_footer div:not(:last-child) {/*écart horizontal entre les titres*/
+#guide_footer div:nth-child(1) {/*écart horizontal entre les titres*/
   margin: 0 100px 0 0;
 }
 #footer_telechargements p {
@@ -748,6 +729,10 @@ footer p a:hover{
 }
 
 
+/*La propriété content est utilisée avec les pseudo-éléments ::before et ::after afin de générer le contenu 
+  d'un élément ici vide on peut très bien suivant l'élément choisi exemple lui rajouter un point à la fin, un tiret, créer une ligne sous un titre .
+   idem pour ::before.
+   on peut aussi rajouter des guillemets pour des blockotes....*/
 
 
 
